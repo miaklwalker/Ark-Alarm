@@ -46,6 +46,7 @@ class Cluster {
             if(hasHostile){
                 return {name:map.name,hasHostile}
             }else{
+                
                 return hasHostile;
             }
         })
