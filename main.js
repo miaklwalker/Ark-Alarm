@@ -35,8 +35,6 @@ class Cluster {
         this.hostiles.push(id);
     }
     async scanHostiles(){
-        //scan each server for enemies
-        // if found log out server name and the enemy found
         let mapData = await this.checkCluster();
         return mapData.map(map=>{
             let activePlayers = map.players;
