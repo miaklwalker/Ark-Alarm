@@ -1,0 +1,12 @@
+Commands:
+----------------
+Add Threats. 
+
+Features:
+----------------
+track threats 
+alert on main map and no active tribe members
+Show all on cluster
+
+Bugs:
+----------------

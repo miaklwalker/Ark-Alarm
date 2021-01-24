@@ -1,0 +1,29 @@
+{
+  "server": "Bearded Gamer",
+  "ip": "209.243.19.240",
+  "game": "",
+  "maps": {
+    "The Island": "27019",
+    "Scorched Earth": "",
+    "Aberation": "27023",
+    "The Center": "27017",
+    "Ragnorak": "27015",
+    "Valguero": "27021",
+    "Crystal Isle": "27033",
+    "Extinction": "27025",
+    "Genesis": "27029"
+  },
+  "homebase": "",
+  "enemies": [
+    "123",
+    "red",
+    "Vex",
+    "JackTheRipper"
+  ],
+  "tribe": {
+    "name": "Those Guys",
+    "members": [
+      "ouisihai"
+    ]
+  }
+}
