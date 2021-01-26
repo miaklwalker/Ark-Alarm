@@ -2,25 +2,21 @@
 const { Client } = require('discord.js');
 const { registerCommands, registerEvents } = require('./utils/registry');
 const config = require('../slappey.json');
-const dotenv =  require('dotenv').config()
+const dotenv =  require('dotenv').config();
+const fs = require("fs");
 const client = new Client();
 const Cluster = require('./cluster')
 
-const beardedGamer = new Cluster("arkse","209.243.19.240");
 
-beardedGamer.addServer("27029");
-beardedGamer.addServer("27025");
-beardedGamer.addServer("27023");
-beardedGamer.addServer("27015");
-beardedGamer.addServer("27017");
-beardedGamer.addServer("27021");
-beardedGamer.addServer("27019");
-beardedGamer.addServer("27033");
 
-beardedGamer.watchPlayer('123');
-beardedGamer.watchPlayer('red');
-beardedGamer.watchPlayer('Vex');
-beardedGamer.watchPlayer('JacktheRipper')
+let json = JSON.parse(fs.readFileSync("./src/config.json"));
+const beardedGamer = new Cluster(json.game,json.ip);
+Object.values(json.maps).forEach(map=>{
+  if(map){
+    console.log(map);
+    beardedGamer.addServer(map)
+  }
+});
 
 exports.beardedGamer = beardedGamer;
 

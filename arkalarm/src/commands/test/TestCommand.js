@@ -3,7 +3,7 @@ const {beardedGamer} = require("../../index")
 
 module.exports = class TestCommand extends BaseCommand {
   constructor() {
-    super('', 'testing', []);
+    super('', '', []);
   }
 
   async run(client, message, args) {

@@ -17,10 +17,13 @@
   "enemies": [
     "123",
     "red",
-    "JackTheRipper"
+    "JackTheRipper",
+    "Vex",
+    "ouisihai"
   ],
   "tribe": {
     "name": "Those Guys",
+    "mainmap":"Genesis",
     "members": []
   }
 }
