@@ -23,7 +23,7 @@
   ],
   "tribe": {
     "name": "Those Guys",
-    "mainmap":"Genesis",
-    "members": []
+    "mainmap": "Genesis",
+    "members": ["chizzled", "Vex", "ouisihai"]
   }
 }

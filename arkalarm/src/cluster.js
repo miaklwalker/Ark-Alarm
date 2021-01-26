@@ -50,7 +50,6 @@ module.exports = class Cluster {
             let name = map.map;
             let activePlayers = map.players;
             let hasHostile = json.map(hostile=>activePlayers.includes(hostile)).includes(true);
-            console.log(json)
             if(hasHostile){
             let hostiles = activePlayers
             .filter(player=>json.map(enemy=>enemy === player)

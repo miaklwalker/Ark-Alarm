@@ -6,7 +6,7 @@ const config = {
             if(err)throw err;
             let serverData = JSON.parse(data);
             serverData.tribe.members.push(name);
-            fs.writeFile('config.json',JSON.stringify(serverData,null,2),err=>{
+            fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
                 console.log("Data was written")
             })
@@ -18,7 +18,7 @@ const config = {
             if(err)throw err;
             let serverData = JSON.parse(data);
             serverData.enemies.push(name);
-            fs.writeFile('config.json',JSON.stringify(serverData,null,2),err=>{
+            fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
                 console.log("Data was written")
             })

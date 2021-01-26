@@ -12,10 +12,7 @@ const Cluster = require('./cluster')
 let json = JSON.parse(fs.readFileSync("./src/config.json"));
 const beardedGamer = new Cluster(json.game,json.ip);
 Object.values(json.maps).forEach(map=>{
-  if(map){
-    console.log(map);
-    beardedGamer.addServer(map)
-  }
+  if(map){beardedGamer.addServer(map)}
 });
 
 exports.beardedGamer = beardedGamer;
