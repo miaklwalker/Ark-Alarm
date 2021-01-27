@@ -1,27 +1,27 @@
 {
   "Template": {
-  "server": "Cluster Name",
-  "ip": "Cluster IP",
-  "game": "GameCode",
-  "maps": {
-    "The Island": "port",
-    "Scorched Earth": "port",
-    "Aberation": "port",
-    "The Center": "port",
-    "Ragnorak": "port",
-    "Valguero": "port",
-    "Crystal Isle": "port",
-    "Extinction": "port",
-    "Genesis": "port"
+    "server": "Cluster Name",
+    "ip": "Cluster IP",
+    "game": "GameCode",
+    "maps": {
+      "The Island": "port",
+      "Scorched Earth": "port",
+      "Aberation": "port",
+      "The Center": "port",
+      "Ragnorak": "port",
+      "Valguero": "port",
+      "Crystal Isle": "port",
+      "Extinction": "port",
+      "Genesis": "port"
+    },
+    "homebase": "",
+    "enemies": [],
+    "tribe": {
+      "name": "",
+      "mainmap": "",
+      "members": []
+    }
   },
-  "homebase": "",
-  "enemies": [],
-  "tribe": {
-    "name": "",
-    "mainmap": "",
-    "members": []
-  }
-},
   "The Sassie Gaming Zone": {
     "server": "Bearded Gamer",
     "ip": "209.243.19.240",
@@ -43,8 +43,7 @@
       "red",
       "JackTheRipper",
       "GETRED",
-      "Miso",
-      "Trillax"
+      "Miso"
     ],
     "tribe": {
       "name": "Those Guys",
@@ -74,7 +73,34 @@
       "Genesis": "29150"
     },
     "homebase": "",
-    "enemies": [],
+    "enemies": [
+      "Groovy"
+    ],
+    "tribe": {
+      "name": "",
+      "mainmap": "",
+      "members": []
+    }
+  },
+  "Ark": {
+    "server": "AGB",
+    "ip": "74.208.129.118",
+    "game": "arkse",
+    "maps": {
+      "The Island": "29200",
+      "Scorched Earth": "29300",
+      "Aberation": "29000",
+      "The Center": "29050",
+      "Ragnorak": "29250",
+      "Valguero": "29350",
+      "Crystal Isle": "29056",
+      "Extinction": "29100",
+      "Genesis": "29150"
+    },
+    "homebase": "",
+    "enemies": [
+      "Groovy"
+    ],
     "tribe": {
       "name": "",
       "mainmap": "",

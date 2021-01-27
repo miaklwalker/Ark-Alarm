@@ -8,7 +8,7 @@ module.exports = class addHostile extends BaseCommand {
   
     async run(client, message, args) {
       if(args.length === 1){
-        config.addEnemy("./src/config.json",args[0])
+        config.addEnemy("./src/config.json",args[0],message.guild.name)
         message.channel.send(`${args} was added!`);
       }else{
         message.channel.send("Please add new enemies by typing '!A add [steam username]")

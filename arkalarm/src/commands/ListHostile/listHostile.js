@@ -8,6 +8,6 @@ module.exports = class showHostile extends BaseCommand {
     }
   
     async run(client, message, args) {
-        message.channel.send(`${JSON.parse(fs.readFileSync("./src/config.json")).enemies}`);
+        message.channel.send(`${JSON.parse(fs.readFileSync("./src/config.json"))[message.guild.name].enemies}`);
     }
   }

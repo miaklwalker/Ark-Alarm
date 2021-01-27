@@ -4,7 +4,7 @@ const Cluster = require("../../cluster");
 
 
 function buildCluster (guildName){
-  let {game,ip,maps,enemies} = JSON.parse(fs.readFileSync("./config.json"))[guildName];
+  let {game,ip,maps,enemies} = JSON.parse(fs.readFileSync("./src/config.json"))[guildName];
   let guildCluster = new Cluster(game,ip);
   Object.values(maps).forEach(map=>{
     if(map){guildCluster.addServer(map)}

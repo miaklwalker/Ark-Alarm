@@ -1,10 +1,10 @@
 const fs = require("fs");
 
 const config = {
-    addMember(url,name){
+    addMember(url,name,guild){
         fs.readFile(url,(err,data)=>{
             if(err)throw err;
-            let serverData = JSON.parse(data);
+            let serverData = JSON.parse(data)[guild];
             serverData.tribe.members.push(name);
             fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
@@ -13,11 +13,11 @@ const config = {
             console.log(serverData);
         })
     },
-    addEnemy(url,name){
+    addEnemy(url,name,guild){
         fs.readFile(url,(err,data)=>{
             if(err)throw err;
             let serverData = JSON.parse(data);
-            serverData.enemies.push(name);
+            serverData[guild].enemies.push(name);
             fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
                 console.log("Data was written")
@@ -25,10 +25,10 @@ const config = {
             console.log(serverData);
         })
     },
-    removeTribe(url,name){
+    removeTribe(url,name,guild){
         fs.readFile(url,(err,data)=>{
             if(err)throw err;
-            let serverData = JSON.parse(data);
+            let serverData = JSON.parse(data)[guild];
             serverData.tribe.members = serverData.tribe.members.filter(handle=>handle !== name);
             fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
@@ -37,10 +37,10 @@ const config = {
             console.log(serverData);
         })
     },
-    removeEnemy(url,name){
+    removeEnemy(url,name,guild){
         fs.readFile(url,(err,data)=>{
             if(err)throw err;
-            let serverData = JSON.parse(data);
+            let serverData = JSON.parse(data)[guild];
             serverData.enemies = serverData.enemies.filter(handle=>handle !== name);
             fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
