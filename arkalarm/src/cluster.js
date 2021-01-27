@@ -7,7 +7,6 @@ module.exports = class Cluster {
         this.type = type;
         this.host = host;
         this._servers = [];
-        this.hostiles = [];
     }
     get Servers () {
         return this._servers;
@@ -38,31 +37,28 @@ module.exports = class Cluster {
         return this.clusterInfo;
     }
 
-    watchPlayer(id){
-        this.hostiles.push(id);
-    }
-
     async scanHostiles(){
         let mapData = await this.checkCluster();
-        let json = JSON.parse(fs.readFileSync("./src/config.json")).enemies;
+        let {enemies} = this;
         return mapData
         .map(map=>{
-            let name = map.map;
-            let activePlayers = map.players;
-            let hasHostile = json.map(hostile=>activePlayers.includes(hostile)).includes(true);
+            const {map:name,players:activePlayers} = map;
+            let hasHostile = enemies.map(hostile=>activePlayers.includes(hostile)).includes(true);
             if(hasHostile){
-            let hostiles = activePlayers
-            .filter(player=>json.map(enemy=>enemy === player)
-            .includes(true));
-            return `
-${name}:
-players : ${activePlayers.length > 0 ? activePlayers : "The server is empty"}
-Hostiles : ${hostiles}
-`
-            }else{
-                return ` 
-${name}:
-players : ${activePlayers.length > 0 ? activePlayers : "The server is empty"}
+                let online = activePlayers.filter(player=>!enemies
+                    .map(enemy=>enemy === player)
+                    .includes(true));
+                let hostiles = activePlayers.filter(player=>enemies
+                    .map(enemy=>enemy === player)
+                    .includes(true));
+                    return `${name}:
+    players : ${activePlayers.length > 0 ? online : "The server is empty"}
+    Hostiles : ${hostiles}
+
+`}          else{
+                return `${name}:
+    players : ${activePlayers.length > 0 ? activePlayers : "The server is empty"}
+
 `;
             }
         })
