@@ -23,19 +23,19 @@
     }
   },
   "The Sassie Gaming Zone": {
-    "server": "Bearded Gamer",
-    "ip": "209.243.19.240",
+    "server": "Anarky.GG",
+    "ip": "173.79.110.117",
     "game": "arkse",
     "maps": {
-      "The Island": "27019",
-      "Scorched Earth": "",
-      "Aberation": "27023",
-      "The Center": "27017",
-      "Ragnorak": "27015",
-      "Valguero": "27021",
-      "Crystal Isle": "27033",
-      "Extinction": "27025",
-      "Genesis": "27029"
+      "The Island": "29100",
+      "Scorched Earth": "29102",
+      "Aberation": "29104",
+      "The Center": "29101",
+      "Ragnorak": "29103",
+      "Valguero": "29106",
+      "Crystal Isle": "29108",
+      "Extinction": "29105",
+      "Genesis": "29107"
     },
     "homebase": "",
     "enemies": [
@@ -43,7 +43,8 @@
       "red",
       "JackTheRipper",
       "GETRED",
-      "Miso"
+      "Miso",
+      "NATHON!"
     ],
     "tribe": {
       "name": "Those Guys",
