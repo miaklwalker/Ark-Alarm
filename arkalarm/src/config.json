@@ -23,39 +23,40 @@
     }
   },
   "The Sassie Gaming Zone": {
-    "server": "Anarky.GG",
-    "ip": "173.79.110.117",
-    "game": "arkse",
-    "maps": {
-      "The Island": "29100",
-      "Scorched Earth": "29102",
-      "Aberation": "29104",
-      "The Center": "29101",
-      "Ragnorak": "29103",
-      "Valguero": "29106",
-      "Crystal Isle": "29108",
-      "Extinction": "29105",
-      "Genesis": "29107"
-    },
-    "homebase": "",
-    "enemies": [
-      "123",
-      "red",
-      "JackTheRipper",
-      "GETRED",
-      "Miso",
-      "NATHON!"
-    ],
-    "tribe": {
-      "name": "Those Guys",
-      "mainmap": "Genesis",
-      "members": [
-        "chizzled",
-        "Vex",
-        "ouisihai",
-        "Sassie Cassie",
-        "Haze5500"
-      ]
+    "beardedgamer": {
+      "server": "Bearded Gamer",
+      "ip": "24.8.89.148",
+      "game": "arkse",
+      "maps": {
+        "The Island": "27019",
+        "Scorched Earth": "",
+        "Aberation": "27023",
+        "The Center": "27017",
+        "Ragnorak": "27015",
+        "Valguero": "27021",
+        "Crystal Isle": "27033",
+        "Extinction": "27025",
+        "Genesis": "27029"
+      },
+      "homebase": "",
+      "enemies": [
+        "123",
+        "red",
+        "JackTheRipper",
+        "GETRED",
+        "Miso"
+      ],
+      "tribe": {
+        "name": "Those Guys",
+        "mainmap": "Genesis",
+        "members": [
+          "chizzled",
+          "Vex",
+          "ouisihai",
+          "Sassie Cassie",
+          "Haze5500"
+        ]
+      }
     }
   },
   "The Fireside Chat": {
