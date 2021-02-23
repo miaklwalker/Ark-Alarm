@@ -2,6 +2,11 @@ const Server = require('./servers')
 const Gamedig = require('gamedig');
 const fs = require("fs");
 
+const message = (name,activePlayers,online,hostiles,punks) =>`${name}:
+players : ${activePlayers.length > 0 ? online : "The server is empty"}
+${hostiles.length > 0 ?`hostiles : ${hostiles}` : `hostiles : `}
+${punks.length > 0 ? `Annoying 14 year olds : ${punks}` : "" }
+`
 module.exports = class Cluster {
     constructor(type,host){
         this.type = type;
@@ -37,6 +42,8 @@ module.exports = class Cluster {
         return this.clusterInfo;
     }
 
+
+
     async scanHostiles(){
         let mapData = await this.checkCluster();
         let {enemies} = this;
@@ -45,17 +52,29 @@ module.exports = class Cluster {
             const {map:name,players:activePlayers} = map;
             let hasHostile = enemies.map(hostile=>activePlayers.includes(hostile)).includes(true);
             if(hasHostile){
+                let annoying = ["Yogi","dOEbOY"]
                 let online = activePlayers.filter(player=>!enemies
                     .map(enemy=>enemy === player)
                     .includes(true));
-                let hostiles = activePlayers.filter(player=>enemies
+
+                let hostiles = activePlayers.filter(player=>
+                    enemies
+                    .map(enemy=>enemy === player )
+                    .includes(true)
+                    && 
+                    annoying
+                    .map(punk => player !== punk)
+                    .includes(false)
+                    )
+                
+
+                let punks = activePlayers.filter(player=> annoying
                     .map(enemy=>enemy === player)
                     .includes(true));
-                    return `${name}:
-    players : ${activePlayers.length > 0 ? online : "The server is empty"}
-    Hostiles : ${hostiles}
 
-`}          else{
+                return message(name,activePlayers,online,hostiles,punks);
+
+                }else{
                 return `${name}:
     players : ${activePlayers.length > 0 ? activePlayers : "The server is empty"}
 

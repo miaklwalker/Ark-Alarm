@@ -13,11 +13,11 @@ const config = {
             console.log(serverData);
         })
     },
-    addEnemy(url,name,guild){
+    addEnemy(url,name,guild,cluster){
         fs.readFile(url,(err,data)=>{
             if(err)throw err;
             let serverData = JSON.parse(data);
-            serverData[guild].enemies.push(name);
+            serverData[guild][cluster].enemies.push(name);
             fs.writeFile(url,JSON.stringify(serverData,null,2),err=>{
                 if(err)throw err;
                 console.log("Data was written")
