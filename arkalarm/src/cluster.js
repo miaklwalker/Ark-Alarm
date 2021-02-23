@@ -2,10 +2,10 @@ const Server = require('./servers')
 const Gamedig = require('gamedig');
 const fs = require("fs");
 
-const message = (name,activePlayers,online,hostiles,punks) =>`${name}:
+const message = (name,activePlayers,online,hostiles) =>`${name}:
 players : ${activePlayers.length > 0 ? online : "The server is empty"}
-${hostiles.length > 0 ?`hostiles : ${hostiles}` : `hostiles : `}
-${punks.length > 0 ? `Annoying 14 year olds : ${punks}` : "" }
+hostiles : ${hostiles}
+
 `
 module.exports = class Cluster {
     constructor(type,host){
@@ -52,7 +52,6 @@ module.exports = class Cluster {
             const {map:name,players:activePlayers} = map;
             let hasHostile = enemies.map(hostile=>activePlayers.includes(hostile)).includes(true);
             if(hasHostile){
-                let annoying = ["Yogi","dOEbOY"]
                 let online = activePlayers.filter(player=>!enemies
                     .map(enemy=>enemy === player)
                     .includes(true));
@@ -61,18 +60,9 @@ module.exports = class Cluster {
                     enemies
                     .map(enemy=>enemy === player )
                     .includes(true)
-                    && 
-                    annoying
-                    .map(punk => player !== punk)
-                    .includes(false)
                     )
-                
 
-                let punks = activePlayers.filter(player=> annoying
-                    .map(enemy=>enemy === player)
-                    .includes(true));
-
-                return message(name,activePlayers,online,hostiles,punks);
+                return message(name,activePlayers,online,hostiles);
 
                 }else{
                 return `${name}:
