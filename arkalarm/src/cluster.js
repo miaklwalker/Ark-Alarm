@@ -41,9 +41,6 @@ module.exports = class Cluster {
         }
         return this.clusterInfo;
     }
-
-
-
     async scanHostiles(){
         let mapData = await this.checkCluster();
         let {enemies} = this;
