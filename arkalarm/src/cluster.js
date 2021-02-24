@@ -7,6 +7,10 @@ players : ${activePlayers.length > 0 ? online : "The server is empty"}
 hostiles : ${hostiles}
 
 `
+const safeMessage = (name,activePlayers) => `${name}:
+                players : ${activePlayers.length > 0 ? activePlayers : "The server is empty"}
+
+`
 module.exports = class Cluster {
     constructor(type,host){
         this.type = type;
@@ -49,7 +53,8 @@ module.exports = class Cluster {
             const {map:name,players:activePlayers} = map;
             let hasHostile = enemies.map(hostile=>activePlayers.includes(hostile)).includes(true);
             if(hasHostile){
-                let online = activePlayers.filter(player=>!enemies
+                let online = activePlayers.filter(player=>
+                    !enemies
                     .map(enemy=>enemy === player)
                     .includes(true));
 
@@ -60,12 +65,8 @@ module.exports = class Cluster {
                     )
 
                 return message(name,activePlayers,online,hostiles);
-
                 }else{
-                return `${name}:
-    players : ${activePlayers.length > 0 ? activePlayers : "The server is empty"}
-
-`;
+                return safeMessage(name,activePlayers);
             }
         })
     }
